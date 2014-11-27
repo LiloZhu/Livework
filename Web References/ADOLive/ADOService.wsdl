@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="GetAllRows">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllRowsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRowsByQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sqlQuery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRowsByQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRowsByQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRowByPriKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRowByPriKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRowByPriKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRowsByForeKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="foreignKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRowsByForeKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRowsByForeKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRowsByJoinTables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="table2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="foreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRowsByJoinTablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRowsByJoinTablesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertRow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="insertData" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertRowResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertRowByQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sqlQuery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertRowByQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertRowByQueryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="updateData" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRowResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRowByQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sqlQuery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRowByQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRowByQueryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteRowResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRowByQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sqlQuery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRowByQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteRowByQueryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="format" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxIDByCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="format" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="condition_content" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxIDByConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxIDByConditionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="format" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextIdByCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="format" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="condition_content" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextIdByConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextIdByConditionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="prefixIncrement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="prefixIncrementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixIncrementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StringIncrement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StringIncrementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StringIncrementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMoreSpecificDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValuePairs" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="mode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="moreConditions" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMoreSpecificDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMoreSpecificDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllRowsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllRows" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRowsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllRowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRowsByQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:GetRowsByQuery" />
+  </wsdl:message>
+  <wsdl:message name="GetRowsByQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:GetRowsByQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRowByPriKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetRowByPriKey" />
+  </wsdl:message>
+  <wsdl:message name="GetRowByPriKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetRowByPriKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRowsByForeKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetRowsByForeKey" />
+  </wsdl:message>
+  <wsdl:message name="GetRowsByForeKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetRowsByForeKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRowsByJoinTablesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRowsByJoinTables" />
+  </wsdl:message>
+  <wsdl:message name="GetRowsByJoinTablesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRowsByJoinTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertRowSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertRow" />
+  </wsdl:message>
+  <wsdl:message name="InsertRowSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertRowByQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:InsertRowByQuery" />
+  </wsdl:message>
+  <wsdl:message name="InsertRowByQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:InsertRowByQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRowSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRow" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRowSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRowByQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRowByQuery" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRowByQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRowByQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRowSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRow" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRowSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRowByQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRowByQuery" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRowByQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRowByQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxID" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDByConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxIDByCondition" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDByConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxIDByConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextID" />
+  </wsdl:message>
+  <wsdl:message name="GetNextIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextIdByConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextIdByCondition" />
+  </wsdl:message>
+  <wsdl:message name="GetNextIdByConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextIdByConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="prefixIncrementSoapIn">
+    <wsdl:part name="parameters" element="tns:prefixIncrement" />
+  </wsdl:message>
+  <wsdl:message name="prefixIncrementSoapOut">
+    <wsdl:part name="parameters" element="tns:prefixIncrementResponse" />
+  </wsdl:message>
+  <wsdl:message name="StringIncrementSoapIn">
+    <wsdl:part name="parameters" element="tns:StringIncrement" />
+  </wsdl:message>
+  <wsdl:message name="StringIncrementSoapOut">
+    <wsdl:part name="parameters" element="tns:StringIncrementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMoreSpecificDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMoreSpecificDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetMoreSpecificDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMoreSpecificDataSetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ADOServiceSoap">
+    <wsdl:operation name="GetAllRows">
+      <wsdl:input message="tns:GetAllRowsSoapIn" />
+      <wsdl:output message="tns:GetAllRowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRowsByQuery">
+      <wsdl:input message="tns:GetRowsByQuerySoapIn" />
+      <wsdl:output message="tns:GetRowsByQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRowByPriKey">
+      <wsdl:input message="tns:GetRowByPriKeySoapIn" />
+      <wsdl:output message="tns:GetRowByPriKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRowsByForeKey">
+      <wsdl:input message="tns:GetRowsByForeKeySoapIn" />
+      <wsdl:output message="tns:GetRowsByForeKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRowsByJoinTables">
+      <wsdl:input message="tns:GetRowsByJoinTablesSoapIn" />
+      <wsdl:output message="tns:GetRowsByJoinTablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRow">
+      <wsdl:input message="tns:InsertRowSoapIn" />
+      <wsdl:output message="tns:InsertRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRowByQuery">
+      <wsdl:input message="tns:InsertRowByQuerySoapIn" />
+      <wsdl:output message="tns:InsertRowByQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRow">
+      <wsdl:input message="tns:UpdateRowSoapIn" />
+      <wsdl:output message="tns:UpdateRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRowByQuery">
+      <wsdl:input message="tns:UpdateRowByQuerySoapIn" />
+      <wsdl:output message="tns:UpdateRowByQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRow">
+      <wsdl:input message="tns:DeleteRowSoapIn" />
+      <wsdl:output message="tns:DeleteRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRowByQuery">
+      <wsdl:input message="tns:DeleteRowByQuerySoapIn" />
+      <wsdl:output message="tns:DeleteRowByQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxID">
+      <wsdl:input message="tns:GetMaxIDSoapIn" />
+      <wsdl:output message="tns:GetMaxIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDByCondition">
+      <wsdl:input message="tns:GetMaxIDByConditionSoapIn" />
+      <wsdl:output message="tns:GetMaxIDByConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextID">
+      <wsdl:input message="tns:GetNextIDSoapIn" />
+      <wsdl:output message="tns:GetNextIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextIdByCondition">
+      <wsdl:input message="tns:GetNextIdByConditionSoapIn" />
+      <wsdl:output message="tns:GetNextIdByConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="prefixIncrement">
+      <wsdl:input message="tns:prefixIncrementSoapIn" />
+      <wsdl:output message="tns:prefixIncrementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StringIncrement">
+      <wsdl:input message="tns:StringIncrementSoapIn" />
+      <wsdl:output message="tns:StringIncrementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMoreSpecificDataSet">
+      <wsdl:input message="tns:GetMoreSpecificDataSetSoapIn" />
+      <wsdl:output message="tns:GetMoreSpecificDataSetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ADOServiceSoap" type="tns:ADOServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetAllRows">
+      <soap:operation soapAction="http://tempuri.org/GetAllRows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRowsByQuery">
+      <soap:operation soapAction="http://tempuri.org/GetRowsByQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRowByPriKey">
+      <soap:operation soapAction="http://tempuri.org/GetRowByPriKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRowsByForeKey">
+      <soap:operation soapAction="http://tempuri.org/GetRowsByForeKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRowsByJoinTables">
+      <soap:operation soapAction="http://tempuri.org/GetRowsByJoinTables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRow">
+      <soap:operation soapAction="http://tempuri.org/InsertRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRowByQuery">
+      <soap:operation soapAction="http://tempuri.org/InsertRowByQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRow">
+      <soap:operation soapAction="http://tempuri.org/UpdateRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRowByQuery">
+      <soap:operation soapAction="http://tempuri.org/UpdateRowByQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRow">
+      <soap:operation soapAction="http://tempuri.org/DeleteRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRowByQuery">
+      <soap:operation soapAction="http://tempuri.org/DeleteRowByQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxID">
+      <soap:operation soapAction="http://tempuri.org/GetMaxID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDByCondition">
+      <soap:operation soapAction="http://tempuri.org/GetMaxIDByCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextID">
+      <soap:operation soapAction="http://tempuri.org/GetNextID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextIdByCondition">
+      <soap:operation soapAction="http://tempuri.org/GetNextIdByCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="prefixIncrement">
+      <soap:operation soapAction="http://tempuri.org/prefixIncrement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StringIncrement">
+      <soap:operation soapAction="http://tempuri.org/StringIncrement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoreSpecificDataSet">
+      <soap:operation soapAction="http://tempuri.org/GetMoreSpecificDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ADOService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="ADOServiceSoap" binding="tns:ADOServiceSoap">
+      <soap:address location="http://localhost/LiveService/ADOService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LiveWork", "http://localhost/LiveWork/LiveWork.vbproj", "{8A5A4B6D-1B75-40DB-B07A-0A0DA523BA3E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8A5A4B6D-1B75-40DB-B07A-0A0DA523BA3E}.Debug.ActiveCfg = Debug|.NET
+		{8A5A4B6D-1B75-40DB-B07A-0A0DA523BA3E}.Debug.Build.0 = Debug|.NET
+		{8A5A4B6D-1B75-40DB-B07A-0A0DA523BA3E}.Release.ActiveCfg = Release|.NET
+		{8A5A4B6D-1B75-40DB-B07A-0A0DA523BA3E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

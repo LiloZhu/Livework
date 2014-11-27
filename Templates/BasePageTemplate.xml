@@ -1,0 +1,39 @@
+<html xmlns:template="http://www.xmlforasp.net/templates">
+	<head>
+		<title>The #1 online source for .NET/XML and Web Service Topics</title>
+		<meta NAME="keywords" CONTENT=".NET, dotnet, free seminars, FREE SEMINARS, seminars, .NET Seminars, ASP, ASP.NET, Visual Basic, VB.NET, DOTNET, .net, C#, XML, Training, Developers, Certification, COM, XSLT, XSL, SOAP, Web Services, web services, Serialization, XLink, XPointer, XPath, SQL Server, SQL Server 2000, XQuery" />
+		<meta NAME="Copyright" CONTENT="Copyright 2003 - Wahlin Consulting - all rights reserved. Reproduction of this publication in any form without prior written permission is forbidden." />
+		<meta NAME="Description" CONTENT="For Focused .NET/XML and Web Services Training Visit the XML for ASP.NET Developers Website:  http://www.xmlforasp.net" />
+		<meta NAME="Robots" CONTENT="ALL" />
+		<meta NAME="Author" CONTENT="Wahlin Consulting" />	
+		<script language="javascript" src="Scripts/scripts.js"></script>
+		<link rel="stylesheet" type="text/css" href="Style/style.css" />
+	</head>
+	<body bgcolor="#ffffff" topmargin="0" leftmargin="0">
+		<form id="frmPageForm">
+			<div align="left">
+				<table class="tableBorders" border="0" width="759" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="2" align="left" valign="top">
+							<template:UserControl id="ucHeader" src="UserControls/Header.ascx" />
+						</td>
+					</tr>
+					<tr>
+						<td align="left" valign="top" width="164" bgcolor="#02027a">
+							<template:UserControl id="ucNavigation" src="UserControls/Navigation.ascx" />
+							<template:UserControl id="ucPartners" src="UserControls/Partners.ascx" />
+						</td>
+						<td align="center" valign="top" width="595">
+							<template:PlaceHolder id="Content" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<template:UserControl id="ucFooter" src="UserControls/Footer.ascx" />
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</body>
+</html>

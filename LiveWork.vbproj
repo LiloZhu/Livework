@@ -1,0 +1,319 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Web"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{8A5A4B6D-1B75-40DB-B07A-0A0DA523BA3E}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "LiveWork"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "Off"
+                RootNamespace = "LiveWork"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.Services.dll"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Configuration" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Drawing" />
+                <Import Namespace = "System.Web" />
+                <Import Namespace = "System.Web.UI" />
+                <Import Namespace = "System.Web.UI.HtmlControls" />
+                <Import Namespace = "System.Web.UI.WebControls" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "Admin.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Admin.aspx.vb"
+                    DependentUpon = "Admin.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Admin.aspx.resx"
+                    DependentUpon = "Admin.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "AssemblyInfo.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Global.asax"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax.vb"
+                    DependentUpon = "Global.asax"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Global.asax.resx"
+                    DependentUpon = "Global.asax.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Styles.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Web.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebForm1.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebForm1.aspx.vb"
+                    DependentUpon = "WebForm1.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebForm1.aspx.resx"
+                    DependentUpon = "WebForm1.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "WebForm2.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebForm2.aspx.vb"
+                    DependentUpon = "WebForm2.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebForm2.aspx.resx"
+                    DependentUpon = "WebForm2.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Classes\Live\ADO\ADOProxy.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Classes\Live\Comm\CommFuncton.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "js\system\ftiens4.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "js\system\Tree.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "js\system\TreeLimited.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "js\system\ua.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Templates\BasePageTemplate.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Templates\TemplateCode.vb"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\common\CalendarControl.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\common\CalendarControl.ascx.vb"
+                    DependentUpon = "CalendarControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\common\CalendarControl.ascx.resx"
+                    DependentUpon = "CalendarControl.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\common\Header.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\common\Header.ascx.vb"
+                    DependentUpon = "Header.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\common\Header.ascx.resx"
+                    DependentUpon = "Header.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\common\LogoutHeader.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\common\LogoutHeader.ascx.vb"
+                    DependentUpon = "LogoutHeader.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\common\LogoutHeader.ascx.resx"
+                    DependentUpon = "LogoutHeader.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\System\TreeFrame.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\System\TreeFrame.ascx.vb"
+                    DependentUpon = "TreeFrame.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\System\TreeFrame.ascx.resx"
+                    DependentUpon = "TreeFrame.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserControls\System\TreeFrameLimited.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserControls\System\TreeFrameLimited.ascx.vb"
+                    DependentUpon = "TreeFrameLimited.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserControls\System\TreeFrameLimited.ascx.resx"
+                    DependentUpon = "TreeFrameLimited.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Web References\ADOLive\ADOService.disco"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\ADOLive\ADOService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\ADOLive\Reference.map"
+                    BuildAction = "None"
+                    Generator = "MSDiscoCodeGenerator"
+                    LastGenOutput = "Reference.vb"
+                />
+                <File
+                    RelPath = "Web References\ADOLive\Reference.vb"
+                    DependentUpon = "Reference.map"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <Folder
+                    RelPath = "Web References\ADOLive\"
+                    WebReferenceUrl = "http://localhost/LiveService/ADOService.asmx"
+                    UrlBehavior = "Static"
+                />
+                <Folder
+                    RelPath = "Web References\"
+                    WebReferences = "TRUE"
+                />
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>
+
